@@ -20,7 +20,7 @@ var staticPath = regexp.MustCompile("^/static/([a-zA-Z0-9_.]+)$")
 
 func StaticHandler(w http.ResponseWriter, r *http.Request) {
 	fileName := staticPath.FindStringSubmatch(r.URL.Path)
-	if fileName == nil || len(fileName) <= 1 || (fileName[1] != "cat_fish.jpg" && fileName[1] != "favicon.ico"){
+	if fileName == nil || len(fileName) <= 1 || (fileName[1] != "cat.jpg" && fileName[1] != "favicon.ico"){
 		http.NotFound(w, r)
 		return
 	}
